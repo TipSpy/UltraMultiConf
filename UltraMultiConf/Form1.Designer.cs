@@ -41,8 +41,19 @@ namespace UltraMultiConf
             this.executeBtn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Setup = new System.Windows.Forms.TabPage();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.telnetradiobtn = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.passwordInput = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.usernameInput = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Setup.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -51,6 +62,9 @@ namespace UltraMultiConf
             // 
             // deviceList
             // 
+            this.deviceList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deviceList.FormattingEnabled = true;
             this.deviceList.ItemHeight = 15;
             this.deviceList.Location = new System.Drawing.Point(3, 81);
@@ -100,6 +114,10 @@ namespace UltraMultiConf
             // 
             // commandsToSend
             // 
+            this.commandsToSend.AcceptsTab = true;
+            this.commandsToSend.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.commandsToSend.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.commandsToSend.Location = new System.Drawing.Point(6, 21);
             this.commandsToSend.Name = "commandsToSend";
@@ -110,6 +128,9 @@ namespace UltraMultiConf
             // 
             // outputBox
             // 
+            this.outputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.outputBox.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.outputBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.outputBox.ForeColor = System.Drawing.Color.LawnGreen;
@@ -140,17 +161,20 @@ namespace UltraMultiConf
             // 
             // executeBtn
             // 
-            this.executeBtn.Enabled = false;
+            this.executeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.executeBtn.Location = new System.Drawing.Point(673, 524);
             this.executeBtn.Name = "executeBtn";
-            this.executeBtn.Size = new System.Drawing.Size(190, 31);
+            this.executeBtn.Size = new System.Drawing.Size(190, 51);
             this.executeBtn.TabIndex = 9;
-            this.executeBtn.Text = "Execute!";
+            this.executeBtn.Text = "Next";
             this.executeBtn.UseVisualStyleBackColor = true;
-            this.executeBtn.Click += new System.EventHandler(this.button1_Click);
+            this.executeBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.Setup);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -159,9 +183,18 @@ namespace UltraMultiConf
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(867, 506);
             this.tabControl1.TabIndex = 10;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // Setup
             // 
+            this.Setup.Controls.Add(this.radioButton1);
+            this.Setup.Controls.Add(this.telnetradiobtn);
+            this.Setup.Controls.Add(this.label6);
+            this.Setup.Controls.Add(this.passwordInput);
+            this.Setup.Controls.Add(this.label5);
+            this.Setup.Controls.Add(this.usernameInput);
+            this.Setup.Controls.Add(this.label4);
+            this.Setup.Controls.Add(this.label3);
             this.Setup.Controls.Add(this.addLabel);
             this.Setup.Controls.Add(this.addDeviceInput);
             this.Setup.Controls.Add(this.deviceList);
@@ -174,6 +207,80 @@ namespace UltraMultiConf
             this.Setup.TabIndex = 0;
             this.Setup.Text = "Setup";
             this.Setup.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(208, 182);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(46, 19);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.Text = "SSH";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // telnetradiobtn
+            // 
+            this.telnetradiobtn.AutoSize = true;
+            this.telnetradiobtn.Checked = true;
+            this.telnetradiobtn.Location = new System.Drawing.Point(208, 156);
+            this.telnetradiobtn.Name = "telnetradiobtn";
+            this.telnetradiobtn.Size = new System.Drawing.Size(56, 19);
+            this.telnetradiobtn.TabIndex = 11;
+            this.telnetradiobtn.TabStop = true;
+            this.telnetradiobtn.Text = "Telnet";
+            this.telnetradiobtn.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(208, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 15);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Method:";
+            // 
+            // passwordInput
+            // 
+            this.passwordInput.Location = new System.Drawing.Point(208, 99);
+            this.passwordInput.Name = "passwordInput";
+            this.passwordInput.PasswordChar = '*';
+            this.passwordInput.Size = new System.Drawing.Size(165, 23);
+            this.passwordInput.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(208, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Password:";
+            // 
+            // usernameInput
+            // 
+            this.usernameInput.Location = new System.Drawing.Point(208, 55);
+            this.usernameInput.Name = "usernameInput";
+            this.usernameInput.Size = new System.Drawing.Size(165, 23);
+            this.usernameInput.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(208, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Username:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(250, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Credentials:";
             // 
             // tabPage2
             // 
@@ -199,15 +306,47 @@ namespace UltraMultiConf
             this.tabPage3.Text = "Output";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // progressBar
+            // 
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.Location = new System.Drawing.Point(16, 524);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(651, 31);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 559);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Status:";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(54, 559);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(57, 15);
+            this.statusLabel.TabIndex = 13;
+            this.statusLabel.Text = "Waiting...";
+            // 
             // UltraMultiConf
             // 
             this.AcceptButton = this.addBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 567);
+            this.ClientSize = new System.Drawing.Size(885, 579);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.executeBtn);
-            this.MaximizeBox = false;
             this.Name = "UltraMultiConf";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UltraMultiConf";
@@ -219,6 +358,7 @@ namespace UltraMultiConf
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,6 +378,17 @@ namespace UltraMultiConf
         private System.Windows.Forms.TabPage Setup;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.TextBox passwordInput;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox usernameInput;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton telnetradiobtn;
+        private System.Windows.Forms.Label label6;
     }
 }
 
